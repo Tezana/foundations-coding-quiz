@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24543f">
+  <title>Foundations of Coding Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">WGU • Foundations of Coding</p>
+      <h1>Quiz Me</h1>
+      <p class="sub">Short, simple practice. One question at a time.</p>
+    </header>
+
+    <section class="panel controls" aria-label="Quiz setup">
+      <label>Module
+        <select id="moduleSelect"></select>
+      </label>
+      <label>Questions
+        <select id="questionCount">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="all">All</option>
+        </select>
+      </label>
+      <button id="startBtn" class="primary">Start Quiz</button>
+    </section>
+
+    <section id="quizPanel" class="panel hidden" aria-live="polite">
+      <div class="quiz-top">
+        <span id="progressText"></span>
+        <span id="scoreText">Score: 0</span>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <p id="categoryText" class="category"></p>
+      <h2 id="questionText"></h2>
+      <div id="answers" class="answers"></div>
+      <div id="feedback" class="feedback hidden"></div>
+      <div class="actions">
+        <button id="nextBtn" class="primary hidden">Next</button>
+      </div>
+    </section>
+
+    <section id="resultPanel" class="panel hidden" aria-live="polite">
+      <h2>Quiz Complete</h2>
+      <p id="finalScore" class="final-score"></p>
+      <p id="resultMessage"></p>
+      <div id="reviewList" class="review-list"></div>
+      <button id="restartBtn" class="primary">Try Again</button>
+    </section>
+
+    <section class="panel stats">
+      <h2>Your Progress</h2>
+      <p id="bestScore">Best score: —</p>
+      <p id="streakText">Study streak: —</p>
+      <button id="clearProgressBtn" class="secondary">Clear Saved Progress</button>
+    </section>
+
+    <section class="panel study-tip">
+      <h2>Study Rule</h2>
+      <p>Read the question. Identify the concept. Then answer. Do not rush.</p>
+    </section>
+  </main>
+
+  <script src="data/modules.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
